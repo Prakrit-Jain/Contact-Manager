@@ -35,7 +35,7 @@ function App() {
 
   const updateContactHandler = async (contact) =>{
       const response = await api.put(`/contacts/${contact.id}`,contact);
-      const {id,name,email} = response.data;
+      const {id, name, email} = response.data;
       setContacts(contacts.map(c =>{
         return c.id !== id ? c : contact;
       }))
